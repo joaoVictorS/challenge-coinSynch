@@ -1,0 +1,40 @@
+.wrapper_base {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+
+	label {
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 16px;
+	}
+}
+
+@mixin input_wrapper {
+	input {
+		padding: 16px;
+		border-radius: 6px;
+		border: none;
+		width: 100%;
+	}
+
+	input::placeholder {
+		color: $color-secondary-400;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 24px;
+	}
+
+	input:focus-visible {
+		outline: 2px solid $color-primary-800;
+	}
+}
+
+// Different designs
+.filled {
+	@include input_wrapper;
+
+	label {
+		color: $color-white;
+	}
+}

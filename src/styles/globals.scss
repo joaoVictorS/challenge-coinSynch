@@ -26,7 +26,7 @@ a:focus-visible,
 button:focus-visible {
 	outline-color: $color-quaternary-400; // accessibility and keyboard navigation
 }
-
+label,
 a,
 p,
 h1,
@@ -37,4 +37,36 @@ h5,
 h6 {
 	color: $color-text;
 	font-family: $font-roboto, "Arial", sans-serif;
+}
+
+p {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 24px;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 48px;
+	line-height: 56px;
+	letter-spacing: -0.01em;
+}
+
+h2 {
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 48px;
+	letter-spacing: -0.01em;
+}
+
+h4 {
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 32px;
+}
+
+h5 {
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 32px;
 }

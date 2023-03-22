@@ -1,0 +1,14 @@
+.background {
+	width: 100%;
+	background-color: $color-white;
+	box-shadow: 0px -4px 8px rgba(77, 77, 77, 0.1);
+
+	> div {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: $constraint-main-col;
+		margin-inline: auto;
+		padding-block: 24px;
+	}
+}
