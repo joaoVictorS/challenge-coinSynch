@@ -18,6 +18,11 @@
 	position: relative;
 	width: 124px;
 	height: 21px;
+	
+}
+.timeline_constraint {
+	max-width: 360px;
+	align-self: center;
 }
 
 .left_wrapper {
@@ -32,5 +37,10 @@
 
 .right_wrapper {
 	display: flex;
-	gap: 24px;
+	gap: 80px;
+
+	.buttons_container {
+		display: flex;
+		gap: 24px;
+	}
 }
