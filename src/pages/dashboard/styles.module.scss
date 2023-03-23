@@ -1,0 +1,17 @@
+.bg {
+	width: 100%;
+}
+
+.page_content {
+	padding-block: 56px;
+	width: $constraint-main-col;
+	padding-inline: 8px;
+	margin-inline: auto;
+}
+
+.quick_info_section {
+	display: grid;
+	grid-template-columns: 2fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	gap: 32px;
+}

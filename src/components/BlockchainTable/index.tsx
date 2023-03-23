@@ -4,10 +4,12 @@ import {
   getCoreRowModel,
   useReactTable
 } from '@tanstack/react-table';
+import Image from "next/image";
 import { Blockchain } from '@/services/blockchains';
 import styles from './styles.module.scss';
 import { formatDollar } from '@/utils/currency';
 import { Button } from '../Button';
+import { CurrencyChange } from "../CurrencyChange";
 
 interface Props {
   blockchains: Blockchain[];
@@ -20,16 +22,39 @@ export function BlockchainTable(props: Props) {
     data: props.blockchains,
     columns: [
       {
+				header: "#",
+				cell: (ctx) => <span>{ctx.row.index}</span>,
+			},
+      {
         header: 'Crypto',
-        accessorFn: (row) => `${row.name} ${row.symbol}`
+        cell: (ctx) => {
+					const row = ctx.row.original;
+					const parsedCoinName = row.name.toLowerCase().replace(" ", "-");
+					return (
+						<span className={styles.coin_name_symbol}>
+							<Image
+								src={`https://cryptologos.cc/logos/${parsedCoinName}-${row.symbol.toLowerCase()}-logo.svg`}
+								width={32}
+								height={32}
+								alt={row.name}
+							/>
+							<div>
+								<span>{row.name}</span>
+								<span>{row.symbol}</span>
+							</div>
+						</span>
+					);
+				},
       },
       {
         header: 'Price',
-        accessorFn: (row) => formatDollar(row.priceUsd)
+        accessorFn: (row) => formatDollar(Number(row.priceUsd), true),
       },
       {
         header: 'Change',
-        accessorFn: (row) => formatDollar(row.changePercent24Hr)
+        cell: (ctx) => (
+					<CurrencyChange value={Number(ctx.row.original.changePercent24Hr)} />
+				),
       },
       {
         header: 'Trade',
@@ -44,52 +69,34 @@ export function BlockchainTable(props: Props) {
   });
 
   return (
-    <div className={styles.container}>
-      <table className={styles.table}>
-        <thead>
-          {table.getHeaderGroups().map((headerGroup) => (
-            <tr key={headerGroup.id}>
-              {headerGroup.headers.map((header) => (
-                <th key={header.id}>
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
-                        header.column.columnDef.header,
-                        header.getContext()
-                      )}
-                </th>
-              ))}
-            </tr>
+    <table className={styles.table}>
+    <thead>
+      {table.getHeaderGroups().map((headerGroup) => (
+        <tr key={headerGroup.id}>
+          {headerGroup.headers.map((header) => (
+            <th key={header.id}>
+              {header.isPlaceholder
+                ? null
+                : flexRender(
+                    header.column.columnDef.header,
+                    header.getContext()
+                  )}
+            </th>
           ))}
-        </thead>
-        <tbody>
-          {table.getRowModel().rows.map((row) => (
-            <tr key={row.id}>
-              {row.getVisibleCells().map((cell) => (
-                <td key={cell.id}>
-                  {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                </td>
-              ))}
-            </tr>
+        </tr>
+      ))}
+    </thead>
+    <tbody>
+      {table.getRowModel().rows.map((row) => (
+        <tr key={row.id}>
+          {row.getVisibleCells().map((cell) => (
+            <td key={cell.id}>
+              {flexRender(cell.column.columnDef.cell, cell.getContext())}
+            </td>
           ))}
-        </tbody>
-        <tfoot>
-          {table.getFooterGroups().map((footerGroup) => (
-            <tr key={footerGroup.id}>
-              {footerGroup.headers.map((header) => (
-                <th key={header.id}>
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
-                        header.column.columnDef.footer,
-                        header.getContext()
-                      )}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </tfoot>
-      </table>
-    </div>
+        </tr>
+      ))}
+    </tbody>
+  </table>
   );
 }

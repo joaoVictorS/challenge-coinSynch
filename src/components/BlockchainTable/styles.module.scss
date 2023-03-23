@@ -10,5 +10,57 @@
 
   th {
     text-align: left;
+    font-weight: 400;
+		font-size: 14px;
+		line-height: 16px;
+		color: $color-secondary-500;
+
+		padding: 8px 24px;
+	}
+
+	td {
+		display: flex;
+		align-items: center;
+		padding: 20px 24px;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: 24px;
+		color: $color-text;
+	}
+
+	tr {
+		display: grid;
+		grid-template-columns: max-content 1fr 1fr 1fr 120px;
+		grid-template-rows: 1fr;
+	}
+
+	tr:nth-child(even) {
+		background-color: $color-secondary-100;
   }
+}
+.coin_name_symbol {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+
+	div {
+		display: flex;
+		align-items: center;
+		gap: 4px;
+
+		span:nth-child(1) {
+			color: $color-text;
+		}
+
+		span:nth-child(2) {
+			color: $color-secondary-500;
+		}
+	}
+}
+
+.buy_btn {
+	padding: 8px 28px;
+	gap: 8px;
+	width: 80px;
+	background: $color-tertiary-700;
 }
