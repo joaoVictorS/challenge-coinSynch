@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next';
-import Image from "next/image";
+import Image from 'next/image';
 import axios from 'axios';
 import { LandingNavigator } from '@/components/navigators/LandingNavigator';
 import { ContactForm } from '@/components/ContatForm';
@@ -9,7 +9,6 @@ import { TopCryptos } from '@/components/TopCryptos';
 import { AboutUs } from '@/components/AboutUs';
 import styles from './LandingPage.module.scss';
 import { Hero } from '@/components/Hero';
-
 
 interface Props {
   assets: Blockchain[];
@@ -21,13 +20,13 @@ export default function LandingPage(props: Props) {
       <LandingNavigator blockchains={props.assets} />
       <Hero />
       <div className={styles.waves}>
-				<Image
-					src="/svgs/waves.svg"
-					alt="waves illustration"
-					role="none"
-					fill
-				/>
-			</div>
+        <Image
+          src="/svgs/waves.svg"
+          alt="waves illustration"
+          role="none"
+          fill
+        />
+      </div>
       <AboutUs />
       <TopCryptos blockchains={props.assets} />
       <ContactForm />

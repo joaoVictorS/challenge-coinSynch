@@ -11,7 +11,12 @@ const roboto = Roboto({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className={`${roboto.variable}`}>
+    <div
+      className={`${roboto.variable}`}
+      style={{
+        minHeight: '100vh'
+      }}
+    >
       <Component {...pageProps} />
     </div>
   );

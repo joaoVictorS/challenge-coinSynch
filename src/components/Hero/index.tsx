@@ -5,6 +5,8 @@ import styles from './styles.module.scss';
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/dist/ScrollTrigger'
 import { useEffect } from 'react'
+import imageWoman from '../../../public/images/woman_tablet.png'
+import manCellPhone from '../../../public/images/man_cellphone.png'
 
 export function Hero() {
     gsap.registerPlugin(ScrollTrigger)
