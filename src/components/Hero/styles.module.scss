@@ -1,0 +1,69 @@
+.background {
+  width: 100%;
+  padding-top: 120px;
+
+  .containerRight{
+    position: absolute;
+    margin-left: 500px;
+    opacity: 0.5;
+  }
+  .section_container {
+    display: flex;
+    width: $constraint-main-col;
+    padding-inline: 8px;
+    margin-inline: auto;
+    align-items: center;
+    gap: 80px;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      max-width: 590px;
+
+      h1 {
+        color: $color-primary-500;
+      }
+    }
+  }
+}
+
+.custom_button {
+  max-width: 278px;
+  height: 48px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  gap: 10px;
+}
+
+.pills {
+  display: flex;
+  gap: 32px;
+
+  > span {
+    background: #fff6e8;
+    border-radius: 4px;
+    padding: 4px 16px;
+    color: #fbab34;
+    font-family: $font-roboto;
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+  }
+  
+}
+

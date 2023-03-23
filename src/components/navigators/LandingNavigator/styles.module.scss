@@ -1,46 +1,46 @@
 .background {
-	display: flex;
-	width: 100%;
-	background-color: $color-white;
+  display: flex;
+  width: 100%;
+  background-color: $color-white;
 }
 
 .wrapper {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	width: $constraint-main-col;
-	padding-inline: 8px;
-	margin-inline: auto;
-	padding-block: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+	width: 100%;
+	max-width: $constraint-main-col;
+  padding-inline: 8px;
+  margin-inline: auto;
+  padding-block: 24px;
 }
 
 .logo_container {
-	position: relative;
-	width: 124px;
-	height: 21px;
-	
+  position: relative;
+  width: 124px;
+  height: 21px;
 }
 .timeline_constraint {
-	max-width: 360px;
-	align-self: center;
+  max-width: 360px;
+  align-self: center;
 }
 
 .left_wrapper {
-	display: flex;
-	gap: 40px;
+  display: flex;
+  gap: 40px;
 
-	.links {
-		display: flex;
-		gap: 24px;
-	}
+  .links {
+    display: flex;
+    gap: 24px;
+  }
 }
 
 .right_wrapper {
-	display: flex;
-	gap: 80px;
+  display: flex;
+  gap: 80px;
 
-	.buttons_container {
-		display: flex;
-		gap: 24px;
-	}
+  .buttons_container {
+    display: flex;
+    gap: 24px;
+  }
 }

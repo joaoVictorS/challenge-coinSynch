@@ -1,2 +1,21 @@
 .main {
 }
+
+.waves {
+	width: 1440px;
+	height: 247px;
+	position: relative;
+	margin-inline: auto;
+}
+
+@media (min-width: 1450px) {
+	.waves {
+		mask-image: linear-gradient(
+			to right,
+			transparent 0%,
+			black 10%,
+			black 90%,
+			transparent 100%
+		);
+	}
+}
