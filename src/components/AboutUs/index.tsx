@@ -4,10 +4,10 @@ import styles from './styles.module.scss';
 
 export function AboutUs() {
   return (
-    <section className={styles.background}>
+    <section id="about-us" className={styles.background}>
       <div className={styles.section_content}>
         <div className={styles.cards_wrapper}>
-          <div>
+          <div className='left-card'>
             <Card
               img="/svgs/bitcoin.svg"
               subtitle="For your company"
@@ -27,6 +27,7 @@ export function AboutUs() {
               subtitle="For your company"
               title="Crypto Solutions"
               text="Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,"
+              
             />
             <Card
               img="/svgs/laptop.svg"

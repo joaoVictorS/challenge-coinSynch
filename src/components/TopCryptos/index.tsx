@@ -8,7 +8,7 @@ interface Props {
 
 export function TopCryptos(props: Props) {
   return (
-    <section className={styles.background}>
+    <section id="top-cryptos" className={styles.background}>
       <div className={styles.content}>
         <h3>Top Cryptos</h3>
 

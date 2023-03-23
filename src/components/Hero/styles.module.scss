@@ -1,11 +1,12 @@
 .background {
   width: 100%;
   padding-top: 120px;
-
+  
   .containerRight{
     position: absolute;
     margin-left: 500px;
     opacity: 0.5;
+    height: 100vh;
   }
   .section_container {
     display: flex;

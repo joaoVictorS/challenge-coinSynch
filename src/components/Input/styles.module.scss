@@ -38,3 +38,29 @@
     color: $color-white;
   }
 }
+
+.ghost {
+	@include input_wrapper;
+
+	.input_wrapper {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+		padding: 16px;
+		outline: 1px solid $color-secondary-300;
+		border-radius: 6px;
+
+		input {
+			padding: 0;
+			border-radius: 0;
+		}
+
+		input:focus-visible {
+			outline: transparent;
+		}
+
+		&:focus-within {
+			outline: 1px solid $color-primary-500;
+		}
+	}
+}

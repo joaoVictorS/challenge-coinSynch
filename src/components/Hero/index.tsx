@@ -33,7 +33,7 @@ export function Hero() {
         document.querySelector('#container-right')!;
 
       gsap.to(components, {
-        x: -1100,
+        x: -800,
         duration: 4,
         ease: 'none',
         opacity: 2,

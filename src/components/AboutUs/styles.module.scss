@@ -32,7 +32,6 @@
     }
   }
 }
-
 .cards_wrapper {
   flex: 2;
   display: flex;
@@ -42,7 +41,11 @@
   > div {
     display: flex;
     gap: 32px;
+
   }
+ >.left-card{
+  background: black;
+ }
 }
 
 .card {
@@ -55,6 +58,7 @@
   background: $color-white;
   box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.05);
   border-radius: 6px;
+
 
   .content {
     display: flex;
