@@ -21,6 +21,7 @@ const InputComponent: ForwardRefRenderFunction<HTMLInputElement, Props> = (
   ref
 ) => {
   const messageError = props.name && validationsError?.[props.name]?.message;
+
   return (
     <div className={appendStyles([styles.wrapper_base, styles[design]])}>
       {label && <label>{label}</label>}
@@ -30,8 +31,8 @@ const InputComponent: ForwardRefRenderFunction<HTMLInputElement, Props> = (
         {iconRight}
       </div>
       {messageError && (
-				<span className={styles.error_message}>{messageError.toString()}</span>
-			)}
+        <span className={styles.error_message}>{messageError.toString()}</span>
+      )}
     </div>
   );
 };

@@ -2,7 +2,11 @@ import Image from 'next/image';
 import { Button } from '../Button';
 import styles from './styles.module.scss';
 
-export function AboutUs() {
+interface Props {
+	onSignUpClick: () => void;
+}
+
+export function AboutUs(props: Props) {
   return (
     <section id="about-us" className={styles.background}>
       <div className={styles.section_content}>
@@ -48,7 +52,9 @@ export function AboutUs() {
             porttitor
           </p>
 
-          <Button design="primary">Sign up now</Button>
+          <Button design="primary" onClick={props.onSignUpClick}>
+						Sign up now
+					</Button>
         </article>
       </div>
     </section>

@@ -20,10 +20,10 @@ export function ContactForm() {
         </section>
         <form>
           <Input
-            {...form.register('email')}
             label="Email"
             placeholder="Email"
             design="filled"
+            {...form.register("email")}
           />
 
           <Button type="submit" design="primary">

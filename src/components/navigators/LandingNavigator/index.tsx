@@ -7,6 +7,7 @@ import styles from "./styles.module.scss";
 interface Props {
   blockchains: Blockchain[];
   onSignInClick: () => void;
+  onSignUpClick: () => void;
 }
 
 export function LandingNavigator(props: Props) {
@@ -39,7 +40,9 @@ export function LandingNavigator(props: Props) {
             <Button design="ghost" onClick={props.onSignInClick}>
               Sign in
             </Button>
-            <Button design="primary">Sign up</Button>
+            <Button design="primary" onClick={props.onSignUpClick}>
+							Sign up
+						</Button>
           </div>
         </div>
       </nav>

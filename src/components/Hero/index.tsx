@@ -6,7 +6,11 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useEffect } from 'react';
 
-export function Hero() {
+interface Props {
+	onSignUpClick: () => void;
+}
+
+export function Hero(props: Props) {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
@@ -60,7 +64,11 @@ export function Hero() {
                 urna, porttitor
               </h5>
             </header>
-            <Button design="primary" className={styles.custom_button}>
+            <Button
+							design="primary"
+							className={styles.custom_button}
+							onClick={props.onSignUpClick}
+						>
               SIGN UP NOW
               <Arrow fill="#fff" width={12} height={12} />
             </Button>
