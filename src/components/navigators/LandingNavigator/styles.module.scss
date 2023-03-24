@@ -33,21 +33,21 @@
 .left_wrapper {
   display: flex;
   gap: 40px;
-
+}
   .links {
     display: flex;
     gap: 24px;
   }
-}
+
 
 .right_wrapper {
-  display: flex;
-  gap: 80px;
+	display: flex;
+	gap: 80px;
+}
 
-  .buttons_container {
-    display: flex;
-    gap: 24px;
-  }
+.buttons_container {
+	display: flex;
+	gap: 24px;
 }
 
 @media (max-width: $break-point-tablet) {
@@ -67,3 +67,4 @@
 		width: 100%;
 	}
 }
+

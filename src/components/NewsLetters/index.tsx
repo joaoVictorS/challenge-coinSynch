@@ -5,12 +5,16 @@ import styles from './styles.module.scss';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useEffect } from 'react';
+import { useWindowSize } from "@/hooks/useWindowSize";
 
 interface Props {
 	onSignUpClick: () => void;
 }
 
 export function NewsLetters(props: Props) {
+  const { width, height } = useWindowSize();
+	const isMobile = (width || 0) < 595;
+
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
@@ -82,15 +86,16 @@ export function NewsLetters(props: Props) {
         </div>
 
         <div>
-          <div id="container" className={styles.container}>
-            <Image
-              src="/images/woman_tablet.png"
-              alt="Woman looking at tablet"
-              width={464 + 32}
-              height={499}
-              className="scroll"
-            />
-          </div>
+        {!isMobile ? (
+					<div className={styles.hero_img} id="container" className={styles.container}>
+						<Image
+							src="/images/woman_tablet.png"
+							alt="Woman looking at tablet"
+							width={464 + 32}
+							height={499}
+						/>
+					</div>
+				) : undefined}
           <div id="container-right" className={styles.containerRight}>
             <Image
               src="/images/man_cellphone.png"

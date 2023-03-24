@@ -62,3 +62,9 @@
 .negative {
   color: $color-quaternary-700;
 }
+
+@media (max-width: $break-point-tablet) {
+	.wrapper {
+		overflow: visible;
+	}
+}

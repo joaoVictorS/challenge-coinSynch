@@ -69,6 +69,14 @@ export function LandingNavigator(props: Props) {
             </Button>
           </div>
         </div>
+        <Button design="ghost" onClick={() => {}}>
+					<Image
+						src="/svgs/hamburger-menu.svg"
+						width={24}
+						height={24}
+						alt="menu button"
+					/>
+				</Button>
       </nav>
       {!isDesktop ? (
         <div className={styles.timeline_constraint}>

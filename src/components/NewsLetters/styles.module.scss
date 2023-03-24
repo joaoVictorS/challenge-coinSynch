@@ -11,7 +11,7 @@
   }
   .section_container {
     display: flex;
-    width: $constraint-main-col;
+    max-width: $constraint-main-col;
     padding-inline: 8px;
     margin-inline: auto;
     align-items: center;
