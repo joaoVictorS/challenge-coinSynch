@@ -13,7 +13,11 @@ import { Button } from '@/components/Button';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 
-export function SignInForm() {
+interface Props {
+	onNeedAccount: () => void;
+}
+
+export function SignInForm(props: Props) {
   const [isPassVisible, setIsPassVisible] = useState(false);
   const form = useForm();
   const router = useRouter();
@@ -88,7 +92,11 @@ export function SignInForm() {
       <Button type="submit" design="primary" className={styles.sign_custom_btn}>
         Sign in
       </Button>
-      <Button design="ghost" className={styles.dont_have_an_account_btn}>
+      <Button
+				design="ghost"
+				className={styles.dont_have_an_account_btn}
+				onClick={props.onNeedAccount}
+			>
         Don’t have an account?
         <span>
           Sign up to <span>Coin</span>

@@ -15,7 +15,11 @@ import styles from "./styles.module.scss";
 import { Button } from "../Button";
 import { signUpSchema } from "./validation";
 
-export function SignUpForm() {
+interface Props {
+	onAlreadyHaveAccount: () => void;
+}
+
+export function SignUpForm(props: Props) {
   const [isPassVisible, setIsPassVisible] = useState(false);
   const {
     register,
@@ -144,7 +148,11 @@ export function SignUpForm() {
       <Button type="submit" design="primary" className={styles.sign_custom_btn}>
         Sign Up
       </Button>
-      <Button design="ghost" className={styles.dont_have_an_account_btn}>
+      <Button
+				design="ghost"
+				className={styles.dont_have_an_account_btn}
+				onClick={props.onAlreadyHaveAccount}
+			>
         Already have and account?
         <span>
           Sign in to <span>Coin</span>

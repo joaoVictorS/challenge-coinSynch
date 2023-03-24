@@ -25,8 +25,9 @@ const ModalComponent: ForwardRefRenderFunction<ModalHandler, Props> = (
 ) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Must declare functions inside, to successfully use it outside component
   useImperativeHandle(ref, () => ({
-    close: () => close,
+    close: () => setIsOpen(false),
     open: () => setIsOpen(true)
   }));
 
