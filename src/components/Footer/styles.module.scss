@@ -12,3 +12,11 @@
     padding-block: 24px;
   }
 }
+
+@media (max-width: $break-point-tablet) {
+	.background {
+		> div {
+			padding: 19px 48px;
+		}
+	}
+}

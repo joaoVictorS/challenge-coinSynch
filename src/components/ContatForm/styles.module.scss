@@ -6,26 +6,27 @@
   .content {
     display: flex;
     justify-content: space-between;
+  
     max-width: $constraint-main-col;
     margin-inline: auto;
     padding-inline: 80px;
     padding-block: 120px;
-
+  
     h4 {
       color: $color-primary-200;
     }
-
+  
     h2,
     p {
       color: $color-white;
     }
-
+  
     section {
       display: flex;
       flex-direction: column;
       width: 385px;
     }
-
+  
     form {
       display: flex;
       flex-direction: column;
@@ -40,4 +41,47 @@
       }
     }
   }
+}
+
+@media (max-width: $break-point-tablet) {
+	.content {
+		max-width: $constraint-main-col;
+		margin-inline: auto;
+		padding-inline: 48px;
+		padding-block: 120px;
+    h4 {
+			font-weight: 700;
+			font-size: 20px;
+			line-height: 32px;
+		}
+
+		h2 {
+			font-weight: 700;
+			font-size: 32px;
+			line-height: 40px;
+		}
+    p {
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 24px;
+		}
+
+		section {
+			display: flex;
+			flex-direction: column;
+			width: 385px;
+		}
+		form {
+			display: flex;
+			flex-direction: column;
+			gap: 21px;
+			width: 385px;
+			button {
+				height: 48px;
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 24px;
+			}
+		}
+	}
 }
