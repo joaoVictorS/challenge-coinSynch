@@ -15,8 +15,6 @@ interface Props {
   blockchains: Blockchain[];
 }
 
-const columnHelper = createColumnHelper<Blockchain>();
-
 export function BlockchainTable(props: Props) {
   const table = useReactTable({
     data: props.blockchains,
@@ -53,7 +51,10 @@ export function BlockchainTable(props: Props) {
       {
         header: 'Change',
         cell: (ctx) => (
-					<CurrencyChange value={Number(ctx.row.original.changePercent24Hr)} />
+					<CurrencyChange
+						value={Number(ctx.row.original.changePercent24Hr)}
+						hasPercent
+					/>
 				),
       },
       {

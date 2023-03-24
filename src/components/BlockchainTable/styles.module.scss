@@ -32,7 +32,7 @@
 
 	tr {
 		display: grid;
-		grid-template-columns: max-content 1fr 1fr 1fr 120px;
+		grid-template-columns: 44px max-content 1fr 1fr 1fr 120px;
 		grid-template-rows: 1fr;
 	}
 
@@ -65,4 +65,13 @@
 	gap: 8px;
 	width: 80px;
 	background: $color-tertiary-700;
+}
+
+@media (max-width: $break-point-tablet) {
+	.table {
+		tr {
+			grid-template-columns: 44px 3fr 2fr 1fr 120px;
+			grid-template-rows: 1fr;
+		}
+	}
 }

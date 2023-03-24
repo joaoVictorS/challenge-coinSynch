@@ -4,20 +4,20 @@
   height: 64px;
   background-color: $color-white;
   box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.05);
-  position:fixed;
+  position: fixed;
   z-index: 3;
-  
 }
 
 .wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-	width: 100%;
-	max-width: $constraint-main-col;
+  width: 100%;
+  max-width: $constraint-main-col;
   padding-inline: 8px;
   margin-inline: auto;
   padding-block: 24px;
+  transition: all 120ms;
 }
 
 .logo_container {
@@ -48,4 +48,21 @@
     display: flex;
     gap: 24px;
   }
+}
+
+@media (max-width: $break-point-tablet) {
+	.background {
+		display: flex;
+		flex-direction: column;
+		outline: 1px solid $color-secondary-200;
+		box-shadow: 0px 4px 8px rgba(77, 77, 77, 0.1);
+	}
+
+	.wrapper {
+		padding-inline: 48px;
+	}
+
+	.timeline_constraint {
+		width: 100%;
+	}
 }

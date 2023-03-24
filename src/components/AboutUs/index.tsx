@@ -1,3 +1,4 @@
+import { useWindowSize } from "@/hooks/useWindowSize";
 import Image from 'next/image';
 import { Button } from '../Button';
 import styles from './styles.module.scss';
@@ -7,6 +8,10 @@ interface Props {
 }
 
 export function AboutUs(props: Props) {
+  const { width, height } = useWindowSize();
+
+	const isDesktop = (width || 0) > 768;
+  
   return (
     <section id="about-us" className={styles.background}>
       <div className={styles.section_content}>
@@ -52,9 +57,11 @@ export function AboutUs(props: Props) {
             porttitor
           </p>
 
-          <Button design="primary" onClick={props.onSignUpClick}>
-						Sign up now
-					</Button>
+          {isDesktop ? (
+						<Button design="primary" onClick={props.onSignUpClick}>
+							Sign up now
+						</Button>
+					) : undefined}
         </article>
       </div>
     </section>
