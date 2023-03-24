@@ -10,7 +10,7 @@ interface Props {
 	onSignUpClick: () => void;
 }
 
-export function Hero(props: Props) {
+export function NewsLetters(props: Props) {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
@@ -52,7 +52,7 @@ export function Hero(props: Props) {
     }, []);
 
   return (
-    <section id="hero-section" className={styles.background}>
+    <section id="news-letters" className={styles.background}>
       <div className={styles.section_container}>
         <div>
           <div className={styles.content}>

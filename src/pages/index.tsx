@@ -10,9 +10,10 @@ import { TopCryptos } from "@/components/TopCryptos";
 import { AboutUs } from "@/components/AboutUs";
 import styles from "./LandingPage.module.scss";
 import { SignUpForm } from "@/components/forms/SignUp";
-import { Hero } from "@/components/Hero";
+import { NewsLetters } from "@/components/NewsLetters";
 import { Modal, ModalHandler } from "@/components/modals/Modal";
 import { SignInForm } from "@/components/forms/SignIn";
+import { useRouter } from 'next/router';
 
 interface Props {
   assets: Blockchain[];
@@ -31,7 +32,7 @@ export default function LandingPage(props: Props) {
     modalHandlerSignIn.current?.close();
     modalHandlerSignUp.current?.open();
   }
-
+  
   return (
     <main className={styles.main}>
       <Modal ref={modalHandlerSignIn}>
@@ -46,7 +47,7 @@ export default function LandingPage(props: Props) {
 				onSignInClick={openSignIn}
 				onSignUpClick={openSignUp}
       />
-      <Hero onSignUpClick={openSignUp} />
+      <NewsLetters onSignUpClick={openSignUp} />
       <section className={styles.wav}></section>
       <AboutUs onSignUpClick={openSignUp} />
       <TopCryptos blockchains={props.assets} />
