@@ -48,7 +48,7 @@ export function Hero() {
     }, []);
 
   return (
-    <section className={styles.background}>
+    <section id="hero-section" className={styles.background}>
       <div className={styles.section_container}>
         <div>
           <div className={styles.content}>

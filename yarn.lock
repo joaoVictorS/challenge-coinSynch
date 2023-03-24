@@ -48,6 +48,11 @@
   dependencies:
     "client-only" "^0.0.1"
 
+"@hookform/resolvers@^3.0.0":
+  "integrity" "sha512-SQPefakODpyq25b/phHXDKCdRrEfPcCXV7B4nAa139wE1DxufYbbNAjeo0T04ZXBokRxZ+wD8iA1kkVMa3QwjQ=="
+  "resolved" "https://registry.npmjs.org/@hookform/resolvers/-/resolvers-3.0.0.tgz"
+  "version" "3.0.0"
+
 "@humanwhocodes/config-array@^0.11.8":
   "integrity" "sha512-UybHIJzJnR5Qc/MsD9Kr+RpO2h+/P1GhOwdiLPXK5TWk5sgTdu88bTD9UP+CKbPPh5Rni1u0GjAdYQLemG8g+g=="
   "resolved" "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.11.8.tgz"
@@ -1165,6 +1170,11 @@
   "resolved" "https://registry.npmjs.org/grapheme-splitter/-/grapheme-splitter-1.0.4.tgz"
   "version" "1.0.4"
 
+"gsap-trial@^3.11.5":
+  "integrity" "sha512-yh6+QR+OuzIlaJkMCS0PiVpQ0arNuV8FHjFaFJZ47qjSaYEo6vl3FOvtqDy7A9+D9tTPlxVfD6vk5f5lgFcbKw=="
+  "resolved" "https://registry.npmjs.org/gsap-trial/-/gsap-trial-3.11.5.tgz"
+  "version" "3.11.5"
+
 "gsap@*":
   "integrity" "sha512-Q89nKCLgoX5xUjznh9LcaIUkz54k1voNucT1Rpf9SJNFIQznBwFqt5qUUQbeVInFyN/n18OUJkpeI6CNEDt74w=="
   "resolved" "https://registry.npmjs.org/gsap/-/gsap-3.11.5.tgz"
@@ -1828,7 +1838,7 @@
     "loose-envify" "^1.1.0"
     "scheduler" "^0.23.0"
 
-"react-hook-form@7.43.7":
+"react-hook-form@^7.0.0", "react-hook-form@7.43.7":
   "integrity" "sha512-38yehQkQQ5uufaPKFScs7jhLE8n3+LG9H/BZfFAiBL2+7piDmw/BrdNJV4irzMaPnWZGhmGLHVICHXNVGIuXZg=="
   "resolved" "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.43.7.tgz"
   "version" "7.43.7"
@@ -2227,3 +2237,8 @@
   "integrity" "sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q=="
   "resolved" "https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz"
   "version" "0.1.0"
+
+"zod@^3.21.4":
+  "integrity" "sha512-m46AKbrzKVzOzs/DZgVnG5H55N1sv1M8qZU3A8RIKbs3mrACDNeIOeilDymVb2HdmP8uwshOCF4uJ8uM9rCqJw=="
+  "resolved" "https://registry.npmjs.org/zod/-/zod-3.21.4.tgz"
+  "version" "3.21.4"

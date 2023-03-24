@@ -13,12 +13,13 @@ interface Props
 export function Button(props: Props) {
   if (props.href) {
     return (
-      <Link
+      <Link 
         {...props}
         href={props.href}
         className={appendStyles([styles.base, styles[props.design]])}
       >
         {props.children}
+
       </Link>
     );
   }

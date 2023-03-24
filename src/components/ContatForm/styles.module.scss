@@ -1,9 +1,7 @@
 .background {
-  background: linear-gradient(
-    97.85deg,
-    $color-primary -5.87%,
-    $color-primary-700 118.06%
-  );
+  background-image: url('../../../public/svgs/wave-footer.png');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
 
   .content {
     display: flex;

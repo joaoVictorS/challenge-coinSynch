@@ -19,6 +19,7 @@ interface Props {
 
 export default function LandingPage(props: Props) {
   const modalHandler = useRef<ModalHandler>(null);
+  
 
   return (
     <main className={styles.main}>
@@ -31,14 +32,9 @@ export default function LandingPage(props: Props) {
 				onSignInClick={() => modalHandler.current?.open()}
 			/>
       <Hero />
-      <div className={styles.waves}>
-        <Image
-          src="/svgs/waves.svg"
-          alt="waves illustration"
-          role="none"
-          fill
-        />
-      </div>
+      <section className={styles.wav}>
+        
+      </section>
       <AboutUs />
       <TopCryptos blockchains={props.assets} />
       <ContactForm />

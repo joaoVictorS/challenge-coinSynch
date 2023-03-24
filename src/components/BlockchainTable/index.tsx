@@ -59,7 +59,7 @@ export function BlockchainTable(props: Props) {
       {
         header: 'Trade',
         cell: (row) => (
-          <Button type="button" design="primary">
+          <Button className={styles.btn} type="button" design="primary">
             Buy
           </Button>
         )
