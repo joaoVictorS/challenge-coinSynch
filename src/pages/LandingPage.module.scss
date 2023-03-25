@@ -1,48 +1,57 @@
 .main {
-	position: relative;
+  position: relative;
 
-	.wav{
-		max-width: 1920px;
-		margin:auto;
-		background-image: url('../../public/svgs/Group.png');
-		height: 247px;
-		background-size: 100% auto;
-		background-repeat: no-repeat;
-		mask-image: linear-gradient(
-			to right,
-			transparent 0%,
-			black 10%,
-			black 90%,
-			transparent 100%
-		);
-		mask-image: linear-gradient(
-			to bottom,
-			transparent 0%,
-			black 10%,
-			black 70%,
-			transparent 100%
-		);
-		
-		
-	}
+  .wav {
+    max-width: 1920px;
+    margin: auto;
+    background-image: url("../../public/svgs/Group.png");
+    height: 247px;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      black 10%,
+      black 70%,
+      transparent 100%
+    );
+  }
 }
 
 .waves {
-	width: 1440px;
-	height: 247px;
-	position: relative;
-	margin-inline: auto;
+  width: 1440px;
+  height: 247px;
+  position: relative;
+  margin-inline: auto;
 }
 
+@media (max-width: 1450px) {
+  .waves {
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
+  }
+}
+@media (max-width: 320px) {
+  .main {
+    position: relative;
 
-@media (min-width: 1450px) {
-	.waves {
-		mask-image: linear-gradient(
-			to right,
-			transparent 0%,
-			black 10%,
-			black 90%,
-			transparent 100%
-		);
-	}
+    .wav {
+      max-width: 1920px;
+      background-image: url("../../public/svgs/teste.png");
+      height: 200px;
+
+    }
+  }
 }

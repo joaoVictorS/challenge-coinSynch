@@ -34,7 +34,7 @@ export function NewsLetters(props: Props) {
         toggleActions: 'play none none onLeave '
       }
     });
-  }, []) >
+  }, []) 
     useEffect(() => {
       const components = document.querySelectorAll('#container-right');
       const container: HTMLElement =
@@ -87,12 +87,13 @@ export function NewsLetters(props: Props) {
 
         <div>
         {!isMobile ? (
-					<div className={styles.hero_img} id="container" className={styles.container}>
+					<div className={styles.hero_img} id="container">
 						<Image
 							src="/images/woman_tablet.png"
 							alt="Woman looking at tablet"
 							width={464 + 32}
 							height={499}
+              className={styles.image}
 						/>
 					</div>
 				) : undefined}
@@ -102,7 +103,7 @@ export function NewsLetters(props: Props) {
               alt="Woman looking at tablet"
               width={464 + 32}
               height={499}
-              className="scroll"
+              className={styles.img}
             />
           </div>
         </div>

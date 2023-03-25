@@ -6,7 +6,6 @@ import { useWindowSize } from "@/hooks/useWindowSize";
 import { Blockchain } from "@/services/blockchains";
 import { useRouter } from "next/router";
 
-
 import styles from "./styles.module.scss";
 
 interface Props {
@@ -19,11 +18,12 @@ export function LandingNavigator(props: Props) {
   const { width, height } = useWindowSize();
 
   const isDesktop = (width || 0) > 768;
+  const isMobile = (width || 0) > 368;
 
   const router = useRouter();
 
   const hashNewsLetters = "news-letters";
-  const pathAndSlug= router.asPath.split('#')[0];
+  const pathAndSlug = router.asPath.split("#")[0];
   const newPathNewsLetters = `${pathAndSlug}#${hashNewsLetters}`;
 
   const hashAboutUs = "about-us";
@@ -32,28 +32,52 @@ export function LandingNavigator(props: Props) {
   const hashTopCripts = "top-cryptos";
   const newPathTopCripts = `${pathAndSlug}#${hashTopCripts}`;
 
-  
-
   return (
     <div className={styles.background}>
       <nav className={styles.wrapper}>
         <div className={styles.left_wrapper}>
           <div className={styles.logo_container}>
-            <Button design="ghost" onClick={() => {  window.location.replace(newPathNewsLetters)}}>
+            <Button
+              design="ghost"
+              onClick={() => {
+                window.location.replace(newPathNewsLetters);
+              }}
+            >
               <Image src="/images/logo.png" fill alt="CoinSynch logo" />
             </Button>
           </div>
-          
+
           <div className={styles.links}>
-            <Button  onClick={() => {  window.location.replace(newPathAboutUs)}} design="ghost">
+            <Button
+              onClick={() => {
+                window.location.replace(newPathAboutUs);
+              }}
+              design="ghost"
+            >
               About us
             </Button>
-            <Button onClick={() => {  window.location.replace(newPathTopCripts)}} design="ghost">
+            <Button
+              onClick={() => {
+                window.location.replace(newPathTopCripts);
+              }}
+              design="ghost"
+            >
               Top Cryptos
             </Button>
           </div>
         </div>
-
+        {!isMobile ? (
+          <div className={styles.hero_img} id="container">
+            <Button design="ghost" onClick={() => {}}>
+              <Image
+                src="/svgs/hamburger-menu.svg"
+                width={24}
+                height={24}
+                alt="menu button"
+              />
+            </Button>
+          </div>
+        ) : undefined}
         <div className={styles.right_wrapper}>
           {isDesktop ? (
             <div className={styles.timeline_constraint}>
@@ -69,15 +93,9 @@ export function LandingNavigator(props: Props) {
             </Button>
           </div>
         </div>
-        <Button design="ghost" onClick={() => {}}>
-					<Image
-						src="/svgs/hamburger-menu.svg"
-						width={24}
-						height={24}
-						alt="menu button"
-					/>
-				</Button>
+
       </nav>
+      <div className={styles.boxTimeLine}></div>
       {!isDesktop ? (
         <div className={styles.timeline_constraint}>
           <HorizontalTimeline chains={props.blockchains} />

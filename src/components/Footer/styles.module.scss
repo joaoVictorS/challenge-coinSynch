@@ -14,9 +14,36 @@
 }
 
 @media (max-width: $break-point-tablet) {
-	.background {
-		> div {
-			padding: 19px 48px;
-		}
-	}
-}
+  .background{
+    p{
+      font-size:14px;
+    }
+    div{  
+      padding: 3vh;
+      height: 56px;
+    }
+  }
+    
+  }
+
+  @media (max-width: $break-point-mobile) {
+    .background{
+      height: 0px;
+      p{
+        font-size:14px;
+        display: none;
+      }
+      div{  
+        padding: 0;
+        height: 56px;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+      }
+        div img{
+          align-items: center;
+        }
+    }
+      
+    }
+      

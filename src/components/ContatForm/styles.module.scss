@@ -1,32 +1,32 @@
 .background {
-  background-image: url('../../../public/svgs/wave-footer.png');
-  background-size: 100% auto;
+  background-image: url("../../../public/svgs/wave-footer.png");
   background-repeat: no-repeat;
+  background-size: cover;    
 
   .content {
     display: flex;
     justify-content: space-between;
-  
     max-width: $constraint-main-col;
     margin-inline: auto;
     padding-inline: 80px;
     padding-block: 120px;
-  
+    height: 400px;
+
     h4 {
       color: $color-primary-200;
     }
-  
+
     h2,
     p {
       color: $color-white;
     }
-  
+
     section {
       display: flex;
       flex-direction: column;
       width: 385px;
     }
-  
+
     form {
       display: flex;
       flex-direction: column;
@@ -44,44 +44,119 @@
 }
 
 @media (max-width: $break-point-tablet) {
-	.content {
-		max-width: $constraint-main-col;
-		margin-inline: auto;
-		padding-inline: 48px;
-		padding-block: 120px;
-    h4 {
-			font-weight: 700;
-			font-size: 20px;
-			line-height: 32px;
-		}
+  .background {
+    .content {
+      max-width: $constraint-main-col;
+      margin-inline: auto;
+      padding-inline: 48px;
+      padding-block: 90px;
+      height:344px;
 
-		h2 {
-			font-weight: 700;
-			font-size: 32px;
-			line-height: 40px;
-		}
-    p {
-			font-weight: 400;
-			font-size: 16px;
-			line-height: 24px;
-		}
+      h4 {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 32px;
+        padding-right:20px ;
+      }
 
-		section {
-			display: flex;
-			flex-direction: column;
-			width: 385px;
-		}
-		form {
-			display: flex;
-			flex-direction: column;
-			gap: 21px;
-			width: 385px;
-			button {
-				height: 48px;
-				font-weight: 400;
-				font-size: 16px;
-				line-height: 24px;
-			}
-		}
-	}
+      h2 {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 40px;
+        padding-right:20px ;
+      }
+      p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        padding-right:40px ;
+      }
+
+      section {
+        display: flex;
+        flex-direction: column;
+        width: 465px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 21px;
+        width: 385px;
+        button {
+          height: 48px;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: $break-point-mobile) {
+  .background {
+    .content {
+      width: 320px;
+      margin-inline: auto;
+      padding-inline: 0;
+      padding-block: 90px;
+      height:50vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: linear-gradient(97.85deg, #FBAB34 -5.87%, #AD721A 118.06%);
+      
+
+      h4 {
+        width: 320px;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 32px;
+        padding-right:20px ;
+        text-align: left;
+        padding-left: 25px;
+
+      }
+
+      h2 {
+        width: 320px;
+        font-weight: 700;
+        font-size: 25;
+        line-height: 40px;
+        padding-right:20px ;
+        text-align: left;
+        padding-left: 25px;
+      }
+      p {
+        width: 320px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;  
+        text-align: left;
+        padding-left: 25px;
+      }
+
+      section {
+        display: flex;
+        flex-direction: column;
+        width: 465px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 21px;
+        width: 320px;
+        align-items: center;
+        input{
+          width: 270px;
+        }
+        button {
+          width: 270px;
+          height: 48px;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
 }

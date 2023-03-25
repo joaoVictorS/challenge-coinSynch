@@ -81,6 +81,25 @@
     }
   }
 }
+.cards_wrapper {
+  gap: 24px;
+
+  > div {
+    gap: 24px;
+  }
+
+  > div:nth-child(1)::after {
+    content: "";
+    width: calc(136px - 48px);
+    height: 100px;
+  }
+
+  > div:nth-child(2)::before {
+    content: "";
+    width: calc(136px - 48px);
+    height: 100px;
+  }
+}
 
 @media (max-width: $break-point-tablet) {
   .section_content {
