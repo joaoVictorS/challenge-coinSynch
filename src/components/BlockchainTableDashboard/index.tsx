@@ -18,7 +18,7 @@ interface Props {
   blockchains: Blockchain[];
 }
 
-export function BlockchainTable(props: Props) {
+export function BlockchainTableDashboard(props: Props) {
   const [indexOpenRow, setIndexOpenRow] = useState<number | null>(null);
   const { width } = useWindowSize();
   const isMobile = (width || 0) <= 595;
@@ -35,7 +35,7 @@ export function BlockchainTable(props: Props) {
     columns: [
       {
         header: "#",
-        cell: (ctx) => <span>{ctx.row.index + 1}</span>,
+        cell: (ctx) => <span>{ctx.row.index+1}</span>,
       },
       {
         header: "Crypto",

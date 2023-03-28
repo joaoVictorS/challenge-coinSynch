@@ -1,6 +1,5 @@
 .container {
 	display: flex;
-	gap: 24px;
 	background-color: $color-white;
 	border-radius: 8px;
 	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
@@ -43,14 +42,16 @@
 }
 
 .amount {
-	padding: 36px 57px;
 	background-color: $color-primary-100;
 	border-radius: 0 8px 8px 0;
+	align-items: center;
+	
 
 	span {
 		font-weight: 700;
 		font-size: 32px;
 		line-height: 40px;
 		color: $color-text;
+		display: flex;
 	}
 }

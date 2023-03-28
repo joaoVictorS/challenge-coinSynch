@@ -16,7 +16,6 @@ import { useWindowSize } from "@/hooks/useWindowSize";
 
 interface Props {
   onNeedAccount: () => void;
-  
 }
 
 export function SignInForm(props: Props) {
@@ -102,9 +101,7 @@ export function SignInForm(props: Props) {
         className={styles.dont_have_an_account_btn}
         onClick={props.onNeedAccount}
       >
-           {!isMobile ? (
-				        dontHave
-				) : undefined}
+        {!isMobile ? dontHave : undefined}
         <span>
           Sign up to <span>Coin</span>
           <span>Synch</span>

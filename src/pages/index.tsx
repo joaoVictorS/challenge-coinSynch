@@ -13,7 +13,7 @@ import { SignUpForm } from "@/components/forms/SignUp";
 import { NewsLetters } from "@/components/NewsLetters";
 import { Modal, ModalHandler } from "@/components/modals/Modal";
 import { SignInForm } from "@/components/forms/SignIn";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 
 interface Props {
   assets: Blockchain[];
@@ -32,20 +32,20 @@ export default function LandingPage(props: Props) {
     modalHandlerSignIn.current?.close();
     modalHandlerSignUp.current?.open();
   }
-  
+
   return (
     <main className={styles.main}>
       <Modal ref={modalHandlerSignIn}>
-      <SignInForm onNeedAccount={openSignUp} />
+        <SignInForm onNeedAccount={openSignUp} />
       </Modal>
       <Modal ref={modalHandlerSignUp}>
-      <SignUpForm onAlreadyHaveAccount={openSignIn} />
-			</Modal>
+        <SignUpForm onAlreadyHaveAccount={openSignIn} />
+      </Modal>
 
       <LandingNavigator
         blockchains={props.assets}
-				onSignInClick={openSignIn}
-				onSignUpClick={openSignUp}
+        onSignInClick={openSignIn}
+        onSignUpClick={openSignUp}
       />
       <NewsLetters onSignUpClick={openSignUp} />
       <section className={styles.wav}></section>

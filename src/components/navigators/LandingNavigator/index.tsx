@@ -21,9 +21,9 @@ export function LandingNavigator(props: Props) {
   const isMobile = (width || 0) > 368;
 
   const router = useRouter();
+  const pathAndSlug = router.asPath.split("#")[0];
 
   const hashNewsLetters = "news-letters";
-  const pathAndSlug = router.asPath.split("#")[0];
   const newPathNewsLetters = `${pathAndSlug}#${hashNewsLetters}`;
 
   const hashAboutUs = "about-us";

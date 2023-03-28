@@ -23,12 +23,17 @@ export function DailyVariation() {
         </div>
       </div>
       <div>
-        <Image
+        <div className={styles.img_chart}>
+          
+            <Image
           src="/images/fake_chart.png"
           alt="Chart"
           width={187}
           height={112}
-        />
+          />
+        </div>
+      
+
       </div>
     </article>
   );

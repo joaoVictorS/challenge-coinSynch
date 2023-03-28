@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import Image from 'next/image';
 import styles from './styles.module.scss';
 import { Button } from '@/components/Button';
+import MyWallet from '../cards/MyWallet';
 
 interface Props {
   children: ReactNode;
@@ -76,7 +77,9 @@ export function AppLayout(props: Props) {
               alt="Chart icon"
             />
           </Button>
+          
         </div>
+        
         <div className={styles.main_wrapper}>{props.children}</div>
       </div>
 

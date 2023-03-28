@@ -2,6 +2,7 @@ import {
   forwardRef,
   ForwardRefRenderFunction,
   ReactNode,
+  useCallback,
   useImperativeHandle,
   useState
 } from 'react';
@@ -31,9 +32,9 @@ const ModalComponent: ForwardRefRenderFunction<ModalHandler, Props> = (
     open: () => setIsOpen(true)
   }));
 
-  function close() {
+  const close = useCallback(() => {
     setIsOpen(false);
-  }
+  }, []);
 
   return (
     <Dialog open={isOpen} onClose={close}>
