@@ -2,6 +2,10 @@
   "name": "edusync",
   "version": "0.1.0",
   "private": true,
+  "author": {
+		"name": "joão Victor",
+		"url": "https://github.com/joaoVictorS"
+	},
   "scripts": {
     "dev": "next dev",
     "build": "next build",
