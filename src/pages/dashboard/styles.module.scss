@@ -3,11 +3,12 @@
 	display: flex;
     align-items: top;
     margin-inline: auto;
+	position: relative;
 }
 
 .page_content {
 	padding-block: 36px;
-	width: $constraint-main-col;
+	max-width: $constraint-main-col;
 	margin-inline: auto;
 }
 

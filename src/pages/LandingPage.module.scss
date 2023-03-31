@@ -1,10 +1,9 @@
 .main {
   position: relative;
-
   .wav {
     max-width: 1920px;
     margin: auto;
-    background-image: url("../../public/svgs/Group.png");
+    background-image: url("../../public/svgs/waves.svg");
     height: 247px;
     background-size: 100% auto;
     background-repeat: no-repeat;
@@ -43,7 +42,7 @@
     );
   }
 }
-@media (max-width: 320px) {
+@media (max-width: 650px) {
   .main {
     position: relative;
 
@@ -51,7 +50,6 @@
       max-width: 1920px;
       background-image: url("../../public/svgs/teste.png");
       height: 200px;
-
     }
   }
 }

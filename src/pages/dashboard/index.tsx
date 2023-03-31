@@ -1,70 +1,102 @@
-"use client";
-import { AppLayout } from "@/components/AppLayout";
-import Balance from "@/components/cards/Balance";
-import { DailyVariation } from "@/components/cards/DailyVariation";
-import { News } from "@/components/cards/News";
-import MyWallet from "@/components/cards/MyWallet";
-import styles from "./styles.module.scss";
-import { GetStaticProps } from "next";
-import axios from "axios";
-import { Blockchain, Blockchains } from "@/services/blockchains";
-import { Modal, ModalHandler } from "@/components/modals/Modal";
 import { useRef, useState } from "react";
-import { AddCrypto } from "@/components/forms/AddCrypto";
+
+import { Modal, ModalHandler } from "@/components/common/modals/Modal";
+import { TransferInOut } from "@/components/common/modals/forms/TransferInOut";
+import { AddCrypto } from "@/components/common/modals/forms/AddCrypto";
+import { DailyVariation } from "@/components/dashboard/cards/DailyVariation";
+import MyWallet from "@/components/dashboard/cards/MyWallet";
+import { AppLayout } from "@/components/dashboard/AppLayout";
+import Balance from "@/components/dashboard/cards/Balance";
+import { News } from "@/components/dashboard/cards/News";
+
+import { getCryptos } from "@/api/pickcrypt";
+import { Cryptocoins } from "@/services/Cryptocoins";
+
+import styles from "./styles.module.scss";
 
 interface Props {
-  assets: Blockchain[];
+  data: Cryptocoins[];
 }
 
 export default function Dashboard(props: Props) {
   const modaHandlerAddCrypto = useRef<ModalHandler>(null);
-  const [cryptos, setCryptos] = useState<Blockchain[]>([]);
+  const modalTransferInOut = useRef<ModalHandler>(null);
+  const [selectCrypt, setSelectCrypt] = useState<Cryptocoins>();
+
+  const [cryptos, setCryptos] = useState<Cryptocoins[]>([]);
 
   function AddCryptou() {
     modaHandlerAddCrypto.current?.close();
     modaHandlerAddCrypto.current?.open();
   }
 
-  function closeCrypto(pickcrypt: Blockchain, amount: number) {
+  function closeCrypto(pickcrypt: Cryptocoins, amount: number) {
     modaHandlerAddCrypto.current?.close();
-    const newCrypts = [...cryptos, pickcrypt]
+    pickcrypt.amount = amount;
+    const newCrypts = [...cryptos, pickcrypt];
     setCryptos(newCrypts);
-
   }
 
-  console.log(`alo${cryptos.length}`)
+  function openTransfer(pickcrypt: Cryptocoins) {
+    modalTransferInOut.current?.open();
+    setSelectCrypt(pickcrypt);
+  }
+
+  function closeTransfer(pickcrypt: Cryptocoins) {
+    const crypts = cryptos.filter(
+      (cryptos) => cryptos.asset_id != pickcrypt.asset_id
+    );
+    let newCrypts = [...crypts, pickcrypt];
+    if (pickcrypt.amount! <= 0) {
+      newCrypts = newCrypts.filter(
+        (cryptos) => cryptos.asset_id != pickcrypt.asset_id
+      );
+    }
+    setCryptos(newCrypts);
+    modalTransferInOut.current?.close();
+  }
 
   return (
     <AppLayout>
       <div className={styles.bg}>
         <main className={styles.page_content}>
           <Modal ref={modaHandlerAddCrypto}>
-            <AddCrypto onClose={closeCrypto} assets={props.assets} />
+            <AddCrypto
+              onClose={closeCrypto}
+              assets={props.data}
+              cryptos={cryptos}
+            />
+          </Modal>
+
+          <Modal ref={modalTransferInOut}>
+            <TransferInOut
+              onClose={closeTransfer}
+              assets={props.data}
+              cryptos={cryptos}
+              crypto={selectCrypt}
+            />
           </Modal>
 
           <div className={styles.quick_info_section}>
-            <Balance />
-            <DailyVariation />
+            <Balance data={cryptos} />
+            <DailyVariation data={cryptos} />
             <News />
           </div>
-          <MyWallet onAddCrypto={AddCryptou} assets={cryptos} />
+          <MyWallet
+            onAddCrypto={AddCryptou}
+            data={cryptos}
+            openTransfer={openTransfer}
+          />
         </main>
       </div>
     </AppLayout>
   );
 }
 
-export const getStaticProps: GetStaticProps<Props> = async (context) => {
-  const response = await axios.get<Blockchains>(
-    "https://api.coincap.io/v2/assets"
-  );
+export async function getStaticProps() {
+  const data = await getCryptos();
 
-  const data = response.data.data;
-  data.length = 10;
   return {
-    props: {
-      assets: response.data.data,
-    },
-    revalidate: 60,
+    props: { data },
   };
-};
+}

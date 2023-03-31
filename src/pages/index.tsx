@@ -1,27 +1,29 @@
-import { useRef } from "react";
-import { GetStaticProps } from "next";
-import Image from "next/image";
-import axios from "axios";
-import { LandingNavigator } from "@/components/navigators/LandingNavigator";
-import { ContactForm } from "@/components/ContatForm";
-import { Footer } from "@/components/Footer";
-import { Blockchain, Blockchains } from "@/services/blockchains";
-import { TopCryptos } from "@/components/TopCryptos";
-import { AboutUs } from "@/components/AboutUs";
+import { useRef, useState } from "react";
+
+import { LandingNavigator } from "@/components/home/navigators/LandingNavigator";
+import { ContactForm } from "@/components/home/ContactForm";
+import { TopCryptos } from "@/components/home/TopCryptos";
+import { NewsLetters } from "@/components/home/NewsLetters";
+import { AboutUs } from "@/components/home/AboutUs";
+import { Footer } from "@/components/home/Footer";
+import { Modal, ModalHandler } from "@/components/common/modals/Modal";
+import { SignUpForm } from "@/components/common/modals/forms/SignUp";
+import { SignInForm } from "@/components/common/modals/forms/SignIn";
+
 import styles from "./LandingPage.module.scss";
-import { SignUpForm } from "@/components/forms/SignUp";
-import { NewsLetters } from "@/components/NewsLetters";
-import { Modal, ModalHandler } from "@/components/modals/Modal";
-import { SignInForm } from "@/components/forms/SignIn";
-import { useRouter } from "next/router";
+
+import { getCryptos } from "@/api/pickcrypt";
+import { Cryptocoins } from "@/services/Cryptocoins";
 
 interface Props {
-  assets: Blockchain[];
+  data: Cryptocoins[];
 }
 
 export default function LandingPage(props: Props) {
   const modalHandlerSignIn = useRef<ModalHandler>(null);
   const modalHandlerSignUp = useRef<ModalHandler>(null);
+
+  const [cryptos, setCryptos] = useState(props.data ?? []);
 
   function openSignIn() {
     modalHandlerSignUp.current?.close();
@@ -32,7 +34,7 @@ export default function LandingPage(props: Props) {
     modalHandlerSignIn.current?.close();
     modalHandlerSignUp.current?.open();
   }
-
+  
   return (
     <main className={styles.main}>
       <Modal ref={modalHandlerSignIn}>
@@ -42,32 +44,27 @@ export default function LandingPage(props: Props) {
         <SignUpForm onAlreadyHaveAccount={openSignIn} />
       </Modal>
 
-      <LandingNavigator
-        blockchains={props.assets}
-        onSignInClick={openSignIn}
-        onSignUpClick={openSignUp}
-      />
+      {
+        <LandingNavigator
+          blockchains={cryptos}
+          onSignInClick={openSignIn}
+          onSignUpClick={openSignUp}
+        />
+      }
       <NewsLetters onSignUpClick={openSignUp} />
       <section className={styles.wav}></section>
       <AboutUs onSignUpClick={openSignUp} />
-      <TopCryptos blockchains={props.assets} />
+      <TopCryptos blockchains={cryptos} />
       <ContactForm />
       <Footer />
     </main>
   );
 }
 
-export const getStaticProps: GetStaticProps<Props> = async (context) => {
-  const response = await axios.get<Blockchains>(
-    "https://api.coincap.io/v2/assets"
-  );
+export async function getStaticProps() {
+  const data = await getCryptos();
 
-  const data = response.data.data;
-  data.length = 10;
   return {
-    props: {
-      assets: response.data.data,
-    },
-    revalidate: 60,
+    props: { data },
   };
-};
+}

@@ -12,7 +12,7 @@ const nextConfig = {
       },
       {
         protocol: 'https',
-        hostname: 'cryptologos.cc'
+        hostname: 's3.eu-central-1.amazonaws.com'
       }
     ]
   },
