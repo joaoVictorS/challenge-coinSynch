@@ -8,7 +8,7 @@ interface Props {
   title: string;
 }
 
-export function CardAboutUs(props: Props) {
+export function Card(props: Props) {
   return (
     <article className={styles.card}>
       <Image src={props.img} alt={props.text} width={64} height={64} />

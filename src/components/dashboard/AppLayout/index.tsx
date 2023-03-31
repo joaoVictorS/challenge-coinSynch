@@ -1,14 +1,21 @@
 "use client";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import Image from "next/image";
 import styles from "./styles.module.scss";
 import { Tooltip, Button, Grid, Link } from "@nextui-org/react";
+import MenuDropDown from "./Logout";
 
 interface Props {
   children: ReactNode;
 }
 
 export function AppLayout(props: Props) {
+  const [dropIsOpen, setDropIsDown] = useState(false);
+
+  function Dropdown() {
+    setDropIsDown(!dropIsOpen);
+  }
+
   return (
     <div className={styles.page_bg}>
       <div className={styles.nav_bg}>
@@ -32,12 +39,16 @@ export function AppLayout(props: Props) {
             />
             <div>
               <span>Aulus</span>
+
               <Image
                 src="/svgs/chevron.svg"
                 alt="open profile options"
-                width={8}
-                height={8}
+                width={13}
+                height={13}
+                onClick={Dropdown}
+                className={styles.clickImage}
               />
+              {!dropIsOpen ? null : <MenuDropDown />}
             </div>
           </div>
         </nav>
@@ -49,7 +60,7 @@ export function AppLayout(props: Props) {
             <Grid>
               <Tooltip
                 content="Developers love Next.js"
-                contentColor="invert"
+                contentColor="default"
                 color="warning"
                 placement="right"
               >

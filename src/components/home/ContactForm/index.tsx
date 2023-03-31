@@ -43,7 +43,7 @@ export function ContactForm() {
           />
 
           <Button type="submit" disabled={stateButton} design="primary">
-            {stateButton ? <Loading /> : "Subscribe"}
+            {stateButton ? <Loading color="primary" type="default" /> : "Subscribe"}
           </Button>
         </form>
       </div>

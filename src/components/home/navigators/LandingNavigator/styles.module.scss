@@ -3,7 +3,7 @@
   width: 100%;
   height: 64px;
   background-color: $color-white;
-  box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 4px 8px rgba(77, 77, 77, 0.1);
   position: fixed;
   z-index: 3;
 }
@@ -80,6 +80,36 @@
   }
 }
 @media (max-width: $break-point-mobile) {
+  .menuMobile{
+    position: absolute;
+    margin-top: -15px;
+    padding-left: -20%;
+  }
+  .background {
+    .logo_container {
+      width: 110px;
+      height: 17px;
+      margin-top: 5px;
+      margin-left: -25px;
+    }
+    .links button{
+      display: none;
+    }
+    .buttons_container button{
+      display: none;
+    }
+    .hero_img button {
+      margin-left: 95px;
+    }
+
+  }
+}
+@media (max-width: 375px) {
+  .menuMobile{
+    position: absolute;
+    margin-top: -15px;
+    margin-left: 50px!important;
+  }
   .background {
     .logo_container {
       width: 110px;

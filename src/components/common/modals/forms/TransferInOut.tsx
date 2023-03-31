@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import Image from "next/image";
 
 import { Button } from "@/components/common/Button";
 import { Input } from "../../Input";
@@ -44,10 +45,33 @@ export function TransferInOut(props: Props) {
       className={appendStyles([roboto.className, styles.form])}
       id="formulario"
     >
-      <div>
-        <h4 className={appendStyles([roboto.className, styles.titleAddOut])}>
-          <span>{props.crypto?.name} </span>
-        </h4>
+      <div className={styles.titlemodal}>
+        <span>Transfer Crypto</span>
+      </div>
+      <div className={styles.boxmodal}>
+        <div className={styles.headerTransferInOut}>
+          <h4 className={appendStyles([roboto.className, styles.titleAddOut])}>
+            <span className={styles.youAreTransfering}>
+              You are transfering:{" "}
+            </span>
+            <Image
+              src={`https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_32/${props.crypto?.id_icon}.png`}
+              alt={""}
+              width={23}
+              height={23}
+            />
+
+            <span>
+              {props.crypto?.name}{" "}
+              <span className={styles.nameCryptoTransfer}>
+                {props.crypto?.asset_id}
+              </span>{" "}
+            </span>
+          </h4>
+        </div>
+        <div className={styles.nametransfein}>
+        <span className={styles.nameCryptoTransfer}>Transfer</span>
+        </div>
         <div className={styles.select}>
           <select
             value={selectValue}
@@ -57,9 +81,15 @@ export function TransferInOut(props: Props) {
             <option>Transfer Out</option>
           </select>
         </div>
+        <div className={styles.nametransfein}>
+        <span className={styles.transferin}>Quantity</span>
+        </div>
         <Input
           design="ghost"
           type="number"
+          min="1"
+          max="9999999999"
+          required
           value={amount}
           onChange={handleChange}
         />

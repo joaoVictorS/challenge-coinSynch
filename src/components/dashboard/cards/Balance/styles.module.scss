@@ -42,6 +42,9 @@
 }
 
 .amount {
+	display: flex;
+	justify-content: center;
+	width: 100%;
 	background-color: $color-primary-100;
 	border-radius: 0 8px 8px 0;
 	align-items: center;

@@ -82,7 +82,15 @@
 		}
 	}
 }
-
+.holding{
+	h2{
+		font-size: 12px;
+		position: absolute;
+		margin-top: -20px;
+		font-weight: 100;
+		color: #FBAB34;
+	}
+}
 .buy_btn {
 	padding: 8px 28px;
 	gap: 8px;

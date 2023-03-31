@@ -37,10 +37,21 @@
 @media (max-width: $break-point-tablet) {
   .card {
     width: 100%;
-    max-width: 200px;
+    max-width: 25%;
     height: auto;
 
   }
 
 }
+@media (max-width: $break-point-mobile) {
+  .card {
+    width: 100%;
+    max-width: 54%;
+    height: auto;
+
+  }
+
+}
+
+
 

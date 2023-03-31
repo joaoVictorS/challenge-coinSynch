@@ -12,6 +12,7 @@ import { formatDollar } from "@/utils/currency";
 import { Button } from "@/components/common/Button";
 import { CurrencyChange } from "@/components/common/CurrencyChange";
 import { useWindowSize } from "@/hooks/useWindowSize";
+import { Tooltip, Grid } from "@nextui-org/react";
 
 import styles from "./styles.module.scss";
 
@@ -60,8 +61,18 @@ export function MyWalletTable(props: Props) {
         },
       },
       {
-        header: "Holldings",
-        accessorFn: (row) => formatDollar(Number(row.amount), true),
+        header: "Holdings",
+        cell: (txt) => {
+          const row = txt.row.original;
+          return (
+            <div className={styles.holding}>
+              <span>US$ {formatDollar(Number(row.price_usd))}</span>
+              <h2>
+                {row.amount} {row.asset_id}
+              </h2>
+            </div>
+          );
+        },
       },
       {
         header: "Change",
@@ -91,19 +102,30 @@ export function MyWalletTable(props: Props) {
             );
           }
           return (
-            <Button
-              type="button"
-              design="ghost"
-              onClick={() => props.openTransfer(ctx.row.original)}
-            >
-              <Image
-                src="/svgs/transfercrypto.svg"
-                width={18}
-                height={18}
-                className={styles.btn_trade}
-                alt={""}
-              />
-            </Button>
+            <Grid.Container>
+              <Grid>
+                <Tooltip
+                  content={"Developers love Next.js"}
+                  color="warning"
+                  hideArrow
+                  placement="bottom"
+                >
+                  <Button
+                    type="button"
+                    design="ghost"
+                    onClick={() => props.openTransfer(ctx.row.original)}
+                  >
+                    <Image
+                      src="/svgs/transfercrypto.svg"
+                      width={18}
+                      height={18}
+                      className={styles.btn_trade}
+                      alt={""}
+                    />
+                  </Button>
+                </Tooltip>
+              </Grid>
+            </Grid.Container>
           );
         },
       },

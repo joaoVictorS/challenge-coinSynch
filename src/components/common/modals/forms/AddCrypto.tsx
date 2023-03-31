@@ -41,9 +41,12 @@ export function AddCrypto(props: Props) {
       onSubmit={form.handleSubmit(onSubmit)}
       className={appendStyles([roboto.className, styles.form])}
     >
-      <h4 className={appendStyles([roboto.className, styles.titleAdd])}>
-        <span>AddCrypto</span>
-      </h4>
+      <div className={styles.titleAddCrypto}>
+        <h4 className={appendStyles([roboto.className, styles.titleAdd])}>
+          <span>AddCrypto</span>
+        </h4>
+      </div>
+
       <div className={styles.select}>
         <select
           name="cryptoName"
@@ -62,6 +65,12 @@ export function AddCrypto(props: Props) {
               return (
                 <>
                   <option value={cryptoName.name} key={cryptoName.name}>
+                  <Image
+                        src={`https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_32/${cryptoName.id_icon}.png`}
+                        width={32}
+                        height={32}
+                        alt={cryptoName.name}
+                      />
                     <div>
                       <Image
                         src={`https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_32/${cryptoName.id_icon}.png`}
@@ -83,6 +92,7 @@ export function AddCrypto(props: Props) {
           design="ghost"
           type="number"
           placeholder="number"
+          required
           value={amount}
           onChange={handleChange}
         />

@@ -18,7 +18,7 @@ export function LandingNavigator(props: Props) {
   const { width, height } = useWindowSize();
 
   const isDesktop = (width || 0) > 890;
-  const isMobile = (width || 0) > 368;
+  const isMobile = (width || 0) > 450;
 
   const router = useRouter();
   const pathAndSlug = router.asPath.split("#")[0];
@@ -68,13 +68,13 @@ export function LandingNavigator(props: Props) {
         </div>
         {!isMobile ? (
           <div className={styles.hero_img} id="container">
-            <Button design="ghost" onClick={() => {}}>
+            <Button className={styles.menuMobile} design="ghost" onClick={() => {}}>
               <Image
                 src="/svgs/hamburger-menu.svg"
                 width={24}
                 height={24}
                 alt="menu button"
-              />asd
+              />
             </Button>
           </div>
         ) : undefined}

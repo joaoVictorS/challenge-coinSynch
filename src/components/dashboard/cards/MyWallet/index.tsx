@@ -57,7 +57,9 @@ export default function MyWallet(props: Props) {
             className={styles.custom_btn}
             onClick={() => setIsSample((prev) => !prev)}
           >
-            {isSample ? "View more +" : "View less -"}
+            {isSample 
+            ?<div className={styles.element}><span className={styles.view}>view more+</span></div>  
+            :<div className={styles.element}><span className={styles.view}> view less-</span></div> }
           </Button>
         )}
       </section>

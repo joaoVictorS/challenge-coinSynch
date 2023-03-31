@@ -12,14 +12,71 @@
   text-align: center;
   font-weight: 700;
 }
+.headerTransferInOut {
+  height: 40px;
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+}
+.titleAddOut {
+  .youAreTransfering {
+    color: rgba(172, 171, 183, 1);
+    font-weight: 100;
+  }
+}
+.headerTransferInOut {
+  display: flex;
+  justify-content: center;
+}
+.titleAddOut img {
+  position: absolute;
+  display: inline-block;
+  margin-left: -13px;
+  margin-top: 6px;
+}
+
 .titleAddOut span {
   font-weight: 400;
-  font-size: 20px;
-  line-height: 32px;
+  font-size: 16px;
+  line-height: 24px;
   color: #5d6670;
   text-align: center;
   font-weight: 700;
+  align-items: center;
+  padding: 15px;
+
+  span {
+    position: relative;
+    font-weight: 100;
+    color: #5d6670;
+  }
 }
+.boxmodal {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.titlemodal {
+  display: flex;
+  justify-content: center;
+  border-bottom: solid 1px #c1c6cb;
+  height: 50px;
+  span {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: #5d6670;
+  }
+}
+.titleAddOut {
+  .nameCryptoTransfer {
+    position: absolute;
+    margin-top: -7px;
+    margin-left: -12px;
+  }
+}
+
 .title {
   font-weight: 400;
   font-size: 24px;
@@ -38,12 +95,29 @@
     }
   }
 }
+.nametransfein {
+  .nameCryptoTransfer {
+    color: #5d6670;
+  }
+  .transferin {
+    color: #adb5bc;
+  }
+}
+.select select {
+  height: 50px;
+  background-color: black;
+}
 .select {
   height: 50px;
   outline: 1px solid #e0deea;
   border-radius: 6px;
   display: flex;
   padding-left: 25px;
+}
+.titleAddCrypto {
+  span {
+    font-size: 24px;
+  }
 }
 .select select {
   appearance: none;
@@ -56,7 +130,7 @@
   outline: none;
   background: transparent;
   appearance: none;
-  max-width: 300px;
+  width: 80%;
 }
 .select option {
   background: url(../../../../../public/images/fake_chart.png) no-repeat right

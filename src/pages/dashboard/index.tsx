@@ -43,10 +43,15 @@ export default function Dashboard(props: Props) {
   }
 
   function closeTransfer(pickcrypt: Cryptocoins) {
-    const crypts = cryptos.filter(
-      (cryptos) => cryptos.asset_id != pickcrypt.asset_id
+    const crypts = cryptos.map(
+      (cryptos) =>{
+        if(cryptos.asset_id == pickcrypt.asset_id){
+          cryptos.amount = pickcrypt.amount
+        }
+        return cryptos;
+      }
     );
-    let newCrypts = [...crypts, pickcrypt];
+    let newCrypts = [...crypts];
     if (pickcrypt.amount! <= 0) {
       newCrypts = newCrypts.filter(
         (cryptos) => cryptos.asset_id != pickcrypt.asset_id

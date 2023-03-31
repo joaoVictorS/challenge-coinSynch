@@ -97,15 +97,15 @@
     .content {
       margin-inline: auto;
       padding-inline: 0;
-      padding-block: 90px;
-      height: 50vh;
+      padding-block: 20px;
+      height: 60vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       background: linear-gradient(97.85deg, #fbab34 -5.87%, #ad721a 118.06%);
       text-align: center;
       align-items: center;
-
+      
       h4 {
         display: flex;
         font-weight: 700;
@@ -113,7 +113,8 @@
         line-height: 32px;
         padding-right: 20px;
         text-align: left;
-        padding-left: 25px;
+        padding-left: 20%;
+        margin-top: -60px;
       }
 
       h2 {
@@ -121,9 +122,8 @@
         font-weight: 700;
         font-size: 25;
         line-height: 40px;
-        padding-right: 20px;
         text-align: left;
-        padding-left: 25px;
+        padding-left: 20%;
       }
       p {
         max-width: 60vh;
@@ -131,22 +131,23 @@
         font-size: 14px;
         line-height: 24px;
         text-align: left;
-        padding-left: 25px;
+        padding-left: 20%;
+        width: 370px;
       }
 
       section {
         display: flex;
         flex-direction: column;
-        width: 465px;
+        min-width: 200px;
       }
       form {
         display: flex;
         flex-direction: column;
         gap: 21px;
-        width: 320px;
+        min-width: 220px;
         align-items: center;
         input {
-          width: 270px;
+        width: 270px;
         }
         button {
           width: 270px;
