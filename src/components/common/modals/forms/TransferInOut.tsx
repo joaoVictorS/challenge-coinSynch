@@ -10,6 +10,7 @@ import { Cryptocoins } from "@/services/Cryptocoins";
 import styles from "./styles.module.scss";
 import { appendStyles } from "@/utils/styles";
 import { roboto } from "@/pages/_app";
+
 interface Props {
   assets: Cryptocoins[];
   onClose: (Cryptocoins: Cryptocoins) => void;
@@ -87,8 +88,6 @@ export function TransferInOut(props: Props) {
         <Input
           design="ghost"
           type="number"
-          min="1"
-          max="9999999999"
           required
           value={amount}
           onChange={handleChange}

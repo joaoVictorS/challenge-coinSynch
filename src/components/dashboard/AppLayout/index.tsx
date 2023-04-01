@@ -4,6 +4,9 @@ import Image from "next/image";
 import styles from "./styles.module.scss";
 import { Tooltip, Button, Grid, Link } from "@nextui-org/react";
 import MenuDropDown from "./Logout";
+import { Roboto } from "next/font/google";
+import { appendStyles } from "@/utils/styles";
+import { roboto } from "@/pages/_app";
 
 interface Props {
   children: ReactNode;
@@ -57,14 +60,14 @@ export function AppLayout(props: Props) {
       <div className={styles.main_row}>
         <div className={styles.left_column}>
           <Grid.Container gap={2}>
-            <Grid>
+            <Grid >
               <Tooltip
-                content="Developers love Next.js"
-                contentColor="default"
+                content="Lorem ipsum"
+                 css={{color:"#fff!important", padding:15,borderRadius:1,fontFamily:"$font-roboto!important"}}
                 color="warning"
                 placement="right"
               >
-                <Link>
+                <Link >
                   <Image
                     src="/svgs/wallet.svg"
                     width={32}
@@ -76,8 +79,9 @@ export function AppLayout(props: Props) {
             </Grid>
             <Grid>
               <Tooltip
-                content="Developers love Next.js"
+                content="Lorem ipsum"
                 contentColor="invert"
+                css={{color:"#fff!important", padding:15,borderRadius:1,fontFamily:"Roboto!important"}}
                 color="warning"
                 placement="right"
               >
@@ -93,8 +97,9 @@ export function AppLayout(props: Props) {
             </Grid>
             <Grid>
               <Tooltip
-                content="Developers love Next.js"
+                content="Lorem ipsum"
                 contentColor="invert"
+                css={{color:"#fff!important", padding:15,borderRadius:1,fontFamily:"Roboto!important"}}
                 color="warning"
                 placement="right"
               >
@@ -110,8 +115,9 @@ export function AppLayout(props: Props) {
             </Grid>
             <Grid>
               <Tooltip
-                content="Developers love Next.js"
+                content="Lorem ipsum"
                 contentColor="invert"
+                css={{color:"#fff!important", padding:15,borderRadius:1,fontFamily:"Roboto!important"}}
                 color="warning"
                 placement="right"
               >

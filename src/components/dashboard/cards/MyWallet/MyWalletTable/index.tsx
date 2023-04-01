@@ -105,7 +105,8 @@ export function MyWalletTable(props: Props) {
             <Grid.Container>
               <Grid>
                 <Tooltip
-                  content={"Developers love Next.js"}
+                  content={"Trasfer Crypto"}
+                  css={{color:"#fff!important", padding:15,borderRadius:1,fontFamily:"$font-roboto!important"}}
                   color="warning"
                   hideArrow
                   placement="bottom"
