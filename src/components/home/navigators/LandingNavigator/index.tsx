@@ -7,6 +7,8 @@ import { Cryptocoins } from "@/services/Cryptocoins";
 import { useRouter } from "next/router";
 
 import styles from "./styles.module.scss";
+import { useState } from "react";
+import MenuLandingPage from "./MenuLandingPage";
 
 interface Props {
   blockchains: Cryptocoins[];
@@ -16,6 +18,11 @@ interface Props {
 
 export function LandingNavigator(props: Props) {
   const { width, height } = useWindowSize();
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
+
+  function menuToogle() {
+    setMenuIsOpen(!menuIsOpen);
+  }
 
   const isDesktop = (width || 0) > 890;
   const isMobile = (width || 0) > 450;
@@ -68,7 +75,11 @@ export function LandingNavigator(props: Props) {
         </div>
         {!isMobile ? (
           <div className={styles.hero_img} id="container">
-            <Button className={styles.menuMobile} design="ghost" onClick={() => {}}>
+            <Button
+              className={styles.menuMobile}
+              design="ghost"
+              onClick={menuToogle}
+            >
               <Image
                 src="/svgs/hamburger-menu.svg"
                 width={24}
@@ -84,6 +95,7 @@ export function LandingNavigator(props: Props) {
               <HorizontalTimeline chains={props.blockchains} />
             </div>
           ) : undefined}
+
           <div className={styles.buttons_container}>
             <Button design="ghost" onClick={props.onSignInClick}>
               Sign in
@@ -94,6 +106,7 @@ export function LandingNavigator(props: Props) {
           </div>
         </div>
       </nav>
+      {!menuIsOpen ? null : <MenuLandingPage />}
       <div className={styles.boxTimeLine}></div>
       {!isDesktop ? (
         <div className={styles.timeline_constraint}>

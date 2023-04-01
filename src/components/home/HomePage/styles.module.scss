@@ -264,7 +264,7 @@
       header {
         h1 {
           font-weight: 700;
-          font-size: 40px;
+          font-size: 35px;
           line-height: 40px;
           text-align: left;
         }
@@ -273,6 +273,7 @@
           font-weight: 400;
           font-size: 16px;
           line-height: 24px;
+          margin-top: 10px;
           text-align: left;
         }
       }
@@ -296,10 +297,162 @@
     .pills {
       gap: 24px;
       margin-left: 6%;
+      margin-top: 60px;
       > span {
         font-size: 16px;
         line-height: 24px;
       }
+    }
+  }
+}
+@media (max-width: 450px) {
+  .section_container {
+    padding-inline: 0px;
+    min-width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 400px;
+    padding-top: 90px;
+  }
+  .pills {
+    margin-left: -3vh;
+
+    span {
+      width: 70px;
+      height: 25px;
+      padding: 1px;
+      font-size: 12px !important;
+      margin-top: -60px;
+      text-align: center;
+    }
+  }
+  .content {
+    max-width: 100%;
+    display: flex;
+
+    header {
+      width: 100%;
+      margin-left: -15px;
+
+      h1 {
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 40px;
+        text-align: left;
+        text-align: center;
+      }
+
+      h5 {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        margin-top: 10px;
+        text-align: left;
+        text-align: center;
+        width: 80%;
+        margin-left: 10%;
+      }
+    }
+    button {
+      font-size: 16px;
+      font-weight: 100;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .hero_img {
+    display: none;
+  }
+  .containerRight {
+    display: none;
+  }
+
+  .pills {
+    gap: 24px;
+    margin-left: 20%;
+    margin-top: 60px;
+    > span {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .section_container {
+    padding-inline: 0px;
+    min-width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 400px;
+    margin-left: 3%;
+  }
+  .pills {
+    margin-left: -3vh;
+
+    span {
+      width: 70px;
+      height: 35px;
+      padding: 5px;
+      font-size: 12px !important;
+      margin-top: -50px;
+      text-align: center;
+    }
+  }
+  .content {
+    max-width: 100%;
+    margin-left: -5%;
+    display: flex;
+
+    header {
+      h1 {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 40px;
+        text-align: left;
+        text-align: center;
+      }
+
+      h5 {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        margin-top: 10px;
+        text-align: left;
+        text-align: center;
+      }
+    }
+    button {
+      width: 70%;
+      font-size: 16px;
+      font-weight: 100;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .pills {
+    gap: 24px;
+    margin-left: 10%;
+    margin-top: 60px;
+    > span {
+      font-size: 16px;
+      line-height: 24px;
     }
   }
 }

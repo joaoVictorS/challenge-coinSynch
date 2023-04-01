@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import { LandingNavigator } from "@/components/home/navigators/LandingNavigator";
 import { ContactForm } from "@/components/home/ContactForm";
 import { TopCryptos } from "@/components/home/TopCryptos";
-import { NewsLetters } from "@/components/home/NewsLetters";
+import { HomePage } from "@/components/home/HomePage";
 import { AboutUs } from "@/components/home/AboutUs";
 import { Footer } from "@/components/home/Footer";
 import { Modal, ModalHandler } from "@/components/common/modals/Modal";
@@ -51,7 +51,7 @@ export default function LandingPage(props: Props) {
           onSignUpClick={openSignUp}
         />
       }
-      <NewsLetters onSignUpClick={openSignUp} />
+      <HomePage onSignUpClick={openSignUp} />
       <section className={styles.wav}></section>
       <AboutUs onSignUpClick={openSignUp} />
       <TopCryptos blockchains={cryptos} />

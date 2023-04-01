@@ -185,21 +185,36 @@
   .form {
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    width: 320px;
+    gap: 20px!important;
   }
 }
-@media (max-width: $break-point-mobile) {
+@media(max-width:550px ){
   .form {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    width: 22vh;
+    width: 45vh;
+  }
+}
+@media(max-width:450px ){
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 30vh;
+  }
+}
+@media (max-width: 320px) {
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width:28vh;
   }
 
   .title {
-    font-weight: 400;
-    font-size: 16px;
+    font-weight: 100;
+    font-size: 14px;
     line-height: 32px;
     color: $color-text;
     text-align: center;

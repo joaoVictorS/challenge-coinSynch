@@ -104,7 +104,9 @@
     padding-inline: 48px;
     flex-direction: column-reverse;
   }
-
+  .main_content{
+   padding-inline: 4%;
+  }
   .cards_wrapper {
     gap: 24px;  
 
@@ -128,6 +130,9 @@
   }
 }
 @media(max-width: 650px){
+  .main_content{
+    padding-inline: 7%;
+   }
   .cards_wrapper {
     flex: 2;
     display: flex;

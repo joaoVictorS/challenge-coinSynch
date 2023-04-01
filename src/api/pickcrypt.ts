@@ -4,7 +4,7 @@ import axios from 'axios';
 export const api = axios.create({
   baseURL: 'https://rest.coinapi.io/',
   headers: {
-    'X-CoinAPI-Key': 'D7AAB279-D394-4D45-8CEA-57F18CA9E9EF',
+    'X-CoinAPI-Key': '0B354C0E-9A32-49DB-9848-83EFF08C2EE1',
   },
 });
 

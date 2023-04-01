@@ -53,6 +53,7 @@
 @media (max-width: $break-point-mobile) {
   .background {
     height: 60px;
+    z-index: 4;
     p {
       font-size: 14px;
       display: none;

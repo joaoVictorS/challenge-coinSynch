@@ -15,7 +15,7 @@ interface Props {
   onSignUpClick: () => void;
 }
 
-export function NewsLetters(props: Props) {
+export function HomePage(props: Props) {
   const { width, height } = useWindowSize();
   const isMobile = (width || 0) < 595;
 
