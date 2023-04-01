@@ -1,5 +1,6 @@
 import { Button } from "@/components/common/Button";
 import styles from "./styles.module.scss";
+import Image from "next/image";
 
 interface Props {
     onSignInClick: () => void;
@@ -16,29 +17,31 @@ const MenuLandingPage = (props:Props) => {
               design="ghost"
               className={styles.btnMenu}
             >
-              Home
+              <Image className={styles.iconMenu} src={"/images/home.png"} alt={""}  width={25} height={25}/>
+              <span className={styles.spanHome}>Home</span>
             </Button>
             <Button
               href="#about-us"
               design="ghost"
               className={styles.btnMenu}
             >
-              About us
+               <Image className={styles.iconMenuAbout} src={"/images/aboutus.png"} alt={""}  width={25} height={25}/>
+              <span className={styles.spanAbout}>About us</span>
             </Button>
             <Button
               href="#top-cryptos"
               design="ghost"
               className={styles.btnMenu}
             >
-              Top Cryptos
+               <Image className={styles.iconMenuTop} src={"/images/topcrypto.png"} alt={""}  width={25} height={25}/>
+             <span className={styles.spanCryptos}>Top Cryptos</span> 
             </Button>
-            <Button design="ghost" className={styles.btnMenu} onClick={props.onSignInClick}>
-              Sign in
-            </Button>
-            <Button design="ghost" className={styles.btnMenu} onClick={props.onSignUpClick}>
-              Sign up
-            </Button>
-            
+            <Button  design="ghost" className={styles.btnMenu} onClick={props.onSignUpClick}>
+              <span className={styles.btnMenuSingin}>Sign Up</span>
+            </Button>    
+            <Button  design="ghost"  onClick={props.onSignInClick}>
+              <span className={styles.btnMenuSingup}>Sign In</span>
+            </Button>        
             </div>
             
         </div>

@@ -309,14 +309,6 @@
   .section_container {
     padding-inline: 0px;
     min-width: 100%;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
     height: 400px;
     padding-top: 90px;
   }
@@ -355,8 +347,8 @@
         margin-top: 10px;
         text-align: left;
         text-align: center;
-        width: 80%;
-        margin-left: 10%;
+        width: 90%;
+        margin-left: 5%;
       }
     }
     button {
@@ -414,31 +406,32 @@
     }
   }
   .content {
-    max-width: 100%;
+    max-width: 104%;
     margin-left: -5%;
     display: flex;
 
     header {
       h1 {
         font-weight: 700;
-        font-size: 24px;
+        font-size: 22px;
         line-height: 40px;
-        text-align: left;
         text-align: center;
       }
 
       h5 {
+        width: 90%;
         font-weight: 400;
         font-size: 14px;
         line-height: 24px;
+        margin-left: 5%;
         margin-top: 10px;
-        text-align: left;
         text-align: center;
       }
     }
     button {
       width: 70%;
-      font-size: 16px;
+      height: 40px;
+      font-size: 15px;
       font-weight: 100;
       align-items: center;
       display: flex;

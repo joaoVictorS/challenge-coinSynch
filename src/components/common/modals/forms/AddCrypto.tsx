@@ -65,12 +65,12 @@ export function AddCrypto(props: Props) {
               return (
                 <>
                   <option value={cryptoName.name} key={cryptoName.name}>
-                  <Image
-                        src={`https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_32/${cryptoName.id_icon}.png`}
-                        width={32}
-                        height={32}
-                        alt={cryptoName.name}
-                      />
+                    <Image
+                      src={`https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_32/${cryptoName.id_icon}.png`}
+                      width={32}
+                      height={32}
+                      alt={cryptoName.name}
+                    />
                     <div>
                       <Image
                         src={`https://s3.eu-central-1.amazonaws.com/bbxt-static-icons/type-id/png_32/${cryptoName.id_icon}.png`}

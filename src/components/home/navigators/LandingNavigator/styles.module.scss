@@ -47,6 +47,7 @@
 .buttons_container {
   display: flex;
   gap: 24px;
+  height: 30px;
 }
 
 @media (max-width: $break-point-tablet) {

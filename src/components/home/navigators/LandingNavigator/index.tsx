@@ -73,6 +73,7 @@ export function LandingNavigator(props: Props) {
             </Button>
           </div>
         </div>
+
         {!isMobile ? (
           <div className={styles.hero_img} id="container">
             <Button
@@ -106,7 +107,7 @@ export function LandingNavigator(props: Props) {
           </div>
         </div>
       </nav>
-      {!menuIsOpen ? null : <MenuLandingPage />}
+      {!menuIsOpen ? null : <MenuLandingPage onSignUpClick={props.onSignUpClick} onSignInClick={props.onSignInClick} />}
       <div className={styles.boxTimeLine}></div>
       {!isDesktop ? (
         <div className={styles.timeline_constraint}>
