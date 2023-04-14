@@ -124,19 +124,23 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   font-size: 15px;
-  color: #5d6670;
+  color: #5d6670 !important;
   padding-right: 80px;
   border: none;
   outline: none;
   background: transparent;
   appearance: none;
-  width: 80%;
+  width: 100%;
+  font-size: 18px;
+  optgroup{
+    font-size: 20px;
+    border: 1px solid black;
+  }
 }
-.select option {
-  background: url(../../../../../public/images/fake_chart.png) no-repeat right
-    #f0f0f0;
+.opt {
+  font-size: 30px !important;
+  background-color: #5d6670;
 }
-
 .password_group {
   display: flex;
   flex-direction: column;
@@ -185,10 +189,10 @@
   .form {
     display: flex;
     flex-direction: column;
-    gap: 20px!important;
+    gap: 20px !important;
   }
 }
-@media(max-width:550px ){
+@media (max-width: 550px) {
   .form {
     display: flex;
     flex-direction: column;
@@ -196,7 +200,7 @@
     width: 45vh;
   }
 }
-@media(max-width:450px ){
+@media (max-width: 450px) {
   .form {
     display: flex;
     flex-direction: column;
@@ -209,7 +213,7 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
-    width:28vh;
+    width: 28vh;
   }
 
   .title {

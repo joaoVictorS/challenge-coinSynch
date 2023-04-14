@@ -9,7 +9,7 @@ interface Props {
 
 export default function Balance(props: Props) {
   return (
-    <article className={styles.container}>
+    <article className={styles.container1}>
       <div className={styles.content}>
         <div className={styles.icon_wrapper}>
           <Image

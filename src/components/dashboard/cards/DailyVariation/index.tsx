@@ -12,7 +12,7 @@ interface Props {
 
 export function DailyVariation(props:Props) {
   return (
-    <article className={styles.container}>
+    <article className={styles.container2}>
       <div className={styles.content}>
         <span className={styles.card_title}>Daily Variation</span>
         <div className={styles.coin}>

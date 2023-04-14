@@ -6,7 +6,7 @@ import styles from "./styles.module.scss";
 
 export function News() {
   return (
-    <article className={styles.container}>
+    <article className={styles.container3}>
       <div className={styles.content}>
         <div>
           <div>NFT&rsquo;s news</div>

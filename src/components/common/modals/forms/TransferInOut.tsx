@@ -71,19 +71,21 @@ export function TransferInOut(props: Props) {
           </h4>
         </div>
         <div className={styles.nametransfein}>
-        <span className={styles.nameCryptoTransfer}>Transfer</span>
+          <span className={styles.nameCryptoTransfer}>Transfer</span>
         </div>
         <div className={styles.select}>
           <select
             value={selectValue}
             onChange={(e) => setSelectValue(e.target.value)}
           >
-            <option>Transfer In</option>
-            <option>Transfer Out</option>
+            <optgroup>
+              <option>Transfer In</option>
+              <option>Transfer Out</option>
+            </optgroup>
           </select>
         </div>
         <div className={styles.nametransfein}>
-        <span className={styles.transferin}>Quantity</span>
+          <span className={styles.transferin}>Quantity</span>
         </div>
         <Input
           design="ghost"

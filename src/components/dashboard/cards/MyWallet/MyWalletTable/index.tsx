@@ -106,7 +106,12 @@ export function MyWalletTable(props: Props) {
               <Grid>
                 <Tooltip
                   content={"Trasfer Crypto"}
-                  css={{color:"#fff!important", padding:15,borderRadius:1,fontFamily:"$font-roboto!important"}}
+                  css={{
+                    color: "#fff!important",
+                    padding: 15,
+                    borderRadius: 1,
+                    fontFamily: "$font-roboto!important",
+                  }}
                   color="warning"
                   hideArrow
                   placement="bottom"
